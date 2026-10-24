@@ -1,0 +1,30 @@
+{
+  "task": "dev_clamp",
+  "bug_class": "wrong_variable",
+  "split": "dev",
+  "source": "def clamp(x, lo, hi):\n    return min(max(x, hi), lo)\n",
+  "failure_output": "Traceback (most recent call last):\n  File \"/tmp/claude-1000/tmpv4_3ihzq/run_tests.py\", line 2, in <module>\n    assert clamp(5, 0, 10) == 5\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+  "proposal_s": 8.240999704867136e-06,
+  "candidates": [
+    {
+      "code": "def clamp(x, lo, hi):\n    return min(max(x, lo), hi)\n",
+      "passes": true,
+      "run_s": 0.029384947999915312
+    },
+    {
+      "code": "def clamp(x, lo, hi):\n    return min(max(x, hi), lo)\n",
+      "passes": false,
+      "run_s": 0.04377046900026471
+    },
+    {
+      "code": "def clamp(x, lo, hi):\n    return 0 * min(max(x, hi), lo)\n",
+      "passes": false,
+      "run_s": 0.04511331000003338
+    },
+    {
+      "code": "def clamp(x, lo, hi):\n    return min(max(x, hi), lo)\n\n# noop\n",
+      "passes": false,
+      "run_s": 0.06048268699987602
+    }
+  ]
+}

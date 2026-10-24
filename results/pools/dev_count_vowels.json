@@ -1,0 +1,30 @@
+{
+  "task": "dev_count_vowels",
+  "bug_class": "missing_edge_case",
+  "split": "dev",
+  "source": "def count_vowels(s):\n    return sum(1 for c in s if c in \"aeiou\")\n",
+  "failure_output": "Traceback (most recent call last):\n  File \"/tmp/claude-1000/tmp10jkosiq/run_tests.py\", line 3, in <module>\n    assert count_vowels(\"AEIOU\") == 5\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+  "proposal_s": 1.194199967358145e-05,
+  "candidates": [
+    {
+      "code": "def count_vowels(s):\n    return sum(1 for c in s.lower() if c in \"aeiou\")\n",
+      "passes": true,
+      "run_s": 0.03591840499984755
+    },
+    {
+      "code": "def count_vowels(s):\n    return sum(1 for c in s if c in \"aeiou\")\n",
+      "passes": false,
+      "run_s": 0.07440446100008558
+    },
+    {
+      "code": "def count_vowels(s):\n    return 0 * sum(1 for c in s if c in \"aeiou\")\n",
+      "passes": false,
+      "run_s": 0.050437672000043676
+    },
+    {
+      "code": "def count_vowels(s):\n    return sum(1 for c in s if c in \"aeiou\")\n\n# noop\n",
+      "passes": false,
+      "run_s": 0.04299145699997098
+    }
+  ]
+}

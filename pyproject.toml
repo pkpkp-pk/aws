@@ -1,0 +1,24 @@
+[project]
+name = "decider-patch-search"
+version = "0.1.0"
+description = "Decision-guided patch search: Bedrock proposes, Strands Decider 2B ranks, tests verify"
+requires-python = ">=3.10"
+dependencies = [
+    "boto3>=1.35",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "matplotlib>=3.8",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["agent", "eval", "decider_ranker"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

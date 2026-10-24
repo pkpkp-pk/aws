@@ -1,0 +1,32 @@
+{
+  "random": {
+    "n_tasks": 3,
+    "n_solvable": 3,
+    "mean_runs_to_first_pass": 2.52,
+    "median_runs_to_first_pass": 2.52,
+    "rfp_ci95": [
+      2.52,
+      2.52
+    ],
+    "top1_rate": 0.245,
+    "top3_rate": 0.735,
+    "auroc": null,
+    "brier": null,
+    "mean_latency_s": 0.0
+  },
+  "heuristic": {
+    "n_tasks": 3,
+    "n_solvable": 3,
+    "mean_runs_to_first_pass": 3.3333333333333335,
+    "median_runs_to_first_pass": 3,
+    "rfp_ci95": [
+      3.0,
+      4.0
+    ],
+    "top1_rate": 0,
+    "top3_rate": 0.6666666666666666,
+    "auroc": 0.2222222222222222,
+    "brier": 0.5277777777777778,
+    "mean_latency_s": 0.0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "task": "dev_binary_search",
+  "bug_class": "wrong_variable",
+  "split": "dev",
+  "source": "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if arr[mid] == target:\n            return mid\n        if arr[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return lo\n",
+  "failure_output": "Traceback (most recent call last):\n  File \"/tmp/claude-1000/tmpdiaiif6o/run_tests.py\", line 4, in <module>\n    assert binary_search([1, 3, 5, 7], 4) == -1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+  "proposal_s": 1.76009998540394e-05,
+  "candidates": [
+    {
+      "code": "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if arr[mid] == target:\n            return mid\n        if arr[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1\n",
+      "passes": true,
+      "run_s": 0.02869987299982313
+    },
+    {
+      "code": "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if arr[mid] == target:\n            return mid\n        if arr[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return lo\n",
+      "passes": false,
+      "run_s": 0.04643310399978873
+    },
+    {
+      "code": "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if arr[mid] == target:\n            return 0 * mid\n        if arr[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return lo\n",
+      "passes": false,
+      "run_s": 0.04427374599981704
+    },
+    {
+      "code": "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if arr[mid] == target:\n            return mid\n        if arr[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return lo\n\n# noop\n",
+      "passes": false,
+      "run_s": 0.04199488999984169
+    }
+  ]
+}

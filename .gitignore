@@ -1,0 +1,27 @@
+# secrets — never commit
+.env
+.env.*
+scripts/decider-env.sh
+
+# python
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+
+# local notebooks / scratch
+local.ipynb
+
+# environment junk / local tooling config
+.claude/
+.bash_profile
+.bashrc
+.gitconfig
+.gitmodules
+.idea
+.mcp.json
+.profile
+.ripgreprc
+.vscode
+.zprofile
+.zshrc
